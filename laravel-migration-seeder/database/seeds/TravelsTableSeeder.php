@@ -13,7 +13,7 @@ class TravelsTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for ($i=0; $i=10; $i++){
+        for ($i=0; $i<10; $i++){
             $newTravel = new Travel();
             $newTravel->title = $faker->sentence();
             $newTravel->image = $faker->imageUrl(360, 360);
@@ -22,6 +22,7 @@ class TravelsTableSeeder extends Seeder
             $newTravel->how_many_people = $faker->randomDigitNotNull() ;
             $newTravel->date = $faker->date() ;
             $newTravel->description = $faker->paragraph(2);
+            $newTravel->save();
 
         }
     }
